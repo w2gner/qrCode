@@ -1,7 +1,9 @@
 import qrcode
 
+# Request the link from the user
+url = input("Please enter the link you want to generate a QR code for: ")
+
 # Generate QR code
-url = "https://www.linkedin.com/in/w4gner/"
 qr = qrcode.QRCode(
     version=1,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -18,4 +20,4 @@ img = qr.make_image(fill_color="black", back_color="white")
 img_path = "./linkedin_qr.png"
 img.save(img_path)
 
-print(img_path)
+print(f"QR Code saved at: {img_path}")
